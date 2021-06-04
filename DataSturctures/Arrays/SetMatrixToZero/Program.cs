@@ -9,14 +9,15 @@ namespace SetMatrixToZero
         {
             int[,] matrix = new int[,]{
                 {0, 1, 2, 0},
-                {3, 4, 5, 2},
-                {1, 3, 1, 5}
+                {3, 4, 5, 4},
+                {1, 3, 6, 8}
             };
             Console.WriteLine("Input matrix: ");
             ShowMatrix(matrix);
             int[,] orderedMatrix = ReplaceMatrixToZero(matrix);
             Console.WriteLine("\nReplaced Matrix: ");
             ShowMatrix(orderedMatrix);
+            Console.ReadLine();
         }
 
         static int[,] ReplaceMatrixToZero(int[,] matrix){
@@ -34,12 +35,12 @@ namespace SetMatrixToZero
                     rows[counter] = 1;
                 }
 
-                if (i == mLength)
+                if (i == nLength - 1)
                 {
                     counter++;
                 }
 
-                if (i < mLength)
+                if (i < nLength - 1)
                 {
                     i++;
                 }
@@ -56,12 +57,12 @@ namespace SetMatrixToZero
                     matrix[counter, i] = 0;
                 }
 
-                if (i == mLength)
+                if (i == nLength - 1)
                 {
                     counter++;
                 }
 
-                if (i < mLength)
+                if (i < nLength - 1)
                 {
                     i++;
                 }
